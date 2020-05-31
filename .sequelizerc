@@ -1,0 +1,7 @@
+const path = require('path');
+const basePath = path.resolve('./server/services/mysql/migration');
+module.exports = {
+  'config': path.join(basePath, '/config/config.js'),
+  'seeders-path': path.join(basePath, 'seeders'),
+  'migrations-path': path.join(basePath, 'migrations')
+}

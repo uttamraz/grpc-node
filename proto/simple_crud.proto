@@ -1,0 +1,47 @@
+syntax = "proto3";
+package example.simple_crud;
+
+message CreateRequest {
+    string firstName = 1;
+    string lastName = 2;
+    string email = 3;
+    int32 age = 4;
+    string location = 5;
+    string date = 6;
+}
+
+message Response {
+    int32 status = 1;
+    string message = 2;
+}
+
+message Empty {
+    
+}
+
+message UpdateRequest {
+    string id = 1;
+    string firstName = 2;
+    string lastName = 3;
+    string email = 4;
+    int32 age = 5;
+    string location = 6;
+    string date = 7;
+}
+
+message ListResponse {
+    repeated Details data = 1;
+}
+
+message Details {
+    string firstName = 1;
+    string lastName = 2;
+    string email = 3;
+    int32 age = 4;
+    string location = 5;
+    string date = 6;
+}
+
+message GetRequest {
+    int32 id = 1;
+}

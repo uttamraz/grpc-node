@@ -1,0 +1,10 @@
+syntax = "proto3";
+package example.simple_crud.rpc;
+import "simple_crud.proto";
+
+service SimpleCrudService {
+    rpc create (example.simple_crud.CreateRequest) returns (example.simple_crud.Response);
+    rpc update (example.simple_crud.UpdateRequest) returns (example.simple_crud.Response);
+    rpc list (example.simple_crud.Empty) returns (example.simple_crud.ListResponse);
+    rpc details (example.simple_crud.GetRequest) returns (example.simple_crud.Details);
+}

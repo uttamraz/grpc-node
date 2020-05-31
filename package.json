@@ -1,0 +1,23 @@
+{
+  "name": "grpc-node-mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "npx sequelize-cli db:migrate",
+    "seed": "npx sequelize-cli db:seed:all"
+  },
+  "author": "uttam",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.4",
+    "dotenv": "^8.2.0",
+    "grpc": "^1.24.2",
+    "http-status": "^1.4.2",
+    "mysql2": "^2.1.0"
+  },
+  "devDependencies": {
+    "sequelize": "^5.21.11"
+  }
+}
