@@ -4,7 +4,10 @@
  */
 const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config({ path: path.join(__dirname, '../.env') });
+dotenv.config({
+  path: path.resolve(process.cwd(), '.env'),
+});
+console.log(path.resolve(process.cwd(), '.env'));
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
 const { dbHelper } = require('./helpers');
@@ -15,7 +18,7 @@ const packageDefinition = protoLoader.loadSync('./proto/simple_crud.rpc.proto', 
 });
 const server = new grpc.Server();
 const simpleProto = grpc.loadPackageDefinition(packageDefinition);
-// report service for admin dashboard
+// Grpc Methods
 const simpleServiceCtl = require('./modules/simple_crud');
 server.addService(simpleProto.example.simple_crud.rpc.SimpleCrudService.service, {
   create: simpleServiceCtl.create,
